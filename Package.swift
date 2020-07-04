@@ -20,7 +20,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "raylib-swift",
-            dependencies: []),
+            dependencies: ["CRaylib"]),
+        .systemLibrary(
+            name: "CRaylib",
+            pkgConfig: "raylib"),
         .testTarget(
             name: "raylib-swiftTests",
             dependencies: ["raylib-swift"]),
