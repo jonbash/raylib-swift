@@ -6,3 +6,27 @@
 //
 
 import CRaylib
+
+
+public enum Cursor {
+    public static var isHidden: Bool {
+        get { IsCursorHidden() }
+        set(willHide) { willHide ? HideCursor() : ShowCursor() }
+    }
+
+    public static func show() {
+        ShowCursor()
+    }
+
+    public static func hide() {
+        HideCursor()
+    }
+
+    public static func enable() {
+        EnableCursor()
+    }
+
+    public static func disable() {
+        DisableCursor()
+    }
+}
