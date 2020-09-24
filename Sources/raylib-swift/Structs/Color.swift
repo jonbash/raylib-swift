@@ -26,17 +26,30 @@ public extension Color {
         self.rlColor = .init(r: red, g: green, b: blue, a: alpha)
     }
 
-    init(fromDoublesRed red: Double, green: Double, blue: Double, alpha: Double) {
-        self.init(red: toComponent(red),
-                  green: toComponent(green),
-                  blue: toComponent(blue),
-                  alpha: toComponent(alpha))
+    init(normalized: Vector4) {
+        self.rlColor = ColorFromNormalized(normalized.rlVector)
+    }
+
+    init(hsv: Vector3) {
+        self.rlColor = ColorFromHSV(hsv.rlVector)
+    }
+
+    init(hex: Int32) {
+        self.rlColor = GetColor(hex)
     }
 
     var red: UInt8 { rlColor.r }
     var green: UInt8 { rlColor.g }
     var blue: UInt8 { rlColor.b }
     var alpha: UInt8 { rlColor.a }
+
+    var hex: Int32 { ColorToInt(rlColor) }
+    var normalized: Vector4 { Vector4(ColorNormalize(rlColor)) }
+    var hsv: Vector3 { Vector3(ColorToHSV(rlColor)) }
+
+    func fade(_ alpha: Float) -> Color {
+        Color(Fade(rlColor, alpha))
+    }
 }
 
 // MARK: - Constants

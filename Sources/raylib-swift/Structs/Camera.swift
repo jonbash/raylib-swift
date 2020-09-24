@@ -8,6 +8,8 @@
 import CRaylib
 
 
+// MARK: - Camera2D
+
 public struct Camera2D {
     internal var rlCamera: CRaylib.Camera2D
 

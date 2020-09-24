@@ -56,12 +56,11 @@ public extension Window {
         get { Vector2(GetWindowPosition()) }
         set { SetWindowPosition(Int32(newValue.x), Int32(newValue.y)) }
     }
-
-    var screenWidth: Int {
-        Int(GetScreenWidth())
+    var screenWidth: Int32 {
+        GetScreenWidth()
     }
-    var screenHeight: Int {
-        Int(GetScreenHeight())
+    var screenHeight: Int32 {
+        GetScreenHeight()
     }
     var screenSize: Size {
         Size(width: GetScreenWidth(), height: GetScreenHeight())
@@ -81,5 +80,17 @@ public extension Window {
 
     func close() {
         CloseWindow()
+    }
+}
+
+// MARK: - Time
+
+public extension Window {
+    var frameRate: Int { Int(GetFPS()) }
+    var frameTime: Double { Double(GetFrameTime()) }
+    var timeOpen: Double { GetTime() }
+
+    func setTargetFPS(_ fps: Int) {
+        SetTargetFPS(Int32(fps))
     }
 }

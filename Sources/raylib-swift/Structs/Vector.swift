@@ -41,14 +41,14 @@ public struct Vector3 {
     internal init(_ rlVector: CRaylib.Vector3) {
         self.rlVector = rlVector
     }
-
-    public init(x: Float, y: Float, z: Float) {
-        rlVector = CRaylib.Vector3(x: x, y: y, z: z)
-    }
 }
 
 
 public extension Vector3 {
+    init(x: Float, y: Float, z: Float) {
+        rlVector = CRaylib.Vector3(x: x, y: y, z: z)
+    }
+
     var x: Float {
         get { rlVector.x }
         set { rlVector.x = newValue }
@@ -60,5 +60,23 @@ public extension Vector3 {
     var z: Float {
         get { rlVector.y }
         set { rlVector.y = newValue }
+    }
+}
+
+
+// MARK: - Vector4
+
+public struct Vector4 {
+    internal var rlVector: CRaylib.Vector4
+
+    internal init(_ rlVector: CRaylib.Vector4) {
+        self.rlVector = rlVector
+
+    }
+}
+
+public extension Vector4 {
+    init(x: Float, y: Float, z: Float, w: Float) {
+        rlVector = CRaylib.Vector4(x: x, y: y, z: z, w: w)
     }
 }

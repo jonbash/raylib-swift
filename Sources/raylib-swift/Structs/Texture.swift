@@ -43,12 +43,12 @@ public struct Texture {
 }
 
 public extension Texture {
-    init(id: UInt32, size: Size, format: PixelFormat, mipmaps: Int = 1) {
+    init(id: UInt32, size: Size, format: PixelFormat, mipmaps: Int32 = 1) {
         rlTexture = .init(
             id: id,
             width: size.width32,
             height: size.height32,
-            mipmaps: Int32(mipmaps),
+            mipmaps: mipmaps,
             format: format.rawValue)
     }
 
