@@ -9,7 +9,22 @@ import CRaylib
 
 
 public class Window {
-    public var title: String {
+    private var _title: String
+
+    public init(size: Size, title: String, icon: Image? = nil) {
+        self._title = title
+        title.withCString { InitWindow(size.width32, size.height32, $0) }
+        if let icon = icon { self.setIcon(icon) }
+    }
+}
+
+public extension Window {
+    static var clipboard: String {
+        get { String(cString: GetClipboardText()) }
+        set { newValue.withCString(SetClipboardText(_:)) }
+    }
+    
+    var title: String {
         get { _title }
         set {
             _title = newValue
@@ -17,20 +32,10 @@ public class Window {
         }
     }
 
-    private var _title: String
-
-    public init(width: Int, height: Int, title: String, icon: Image? = nil) {
-        self._title = title
-        title.withCString { InitWindow(Int32(width), Int32(height), $0) }
-    }
-}
-
-extension Window {
     var shouldClose: Bool { WindowShouldClose() }
     var isReady: Bool { IsWindowReady() }
     var isMinimized: Bool { IsWindowMinimized() }
     var isResized: Bool { IsWindowResized() }
-
     var isFullscreen: Bool {
         get { IsWindowFullscreen() }
         set {
@@ -45,6 +50,29 @@ extension Window {
     var isHidden: Bool {
         get { IsWindowHidden() }
         set(willHide) { willHide ? HideWindow() : UnhideWindow() }
+    }
+    
+    var position: Vector2 {
+        get { Vector2(GetWindowPosition()) }
+        set { SetWindowPosition(Int32(newValue.x), Int32(newValue.y)) }
+    }
+
+    var screenWidth: Int {
+        Int(GetScreenWidth())
+    }
+    var screenHeight: Int {
+        Int(GetScreenHeight())
+    }
+    var screenSize: Size {
+        Size(width: GetScreenWidth(), height: GetScreenHeight())
+    }
+
+    func setMinimumSize(_ size: Size) {
+        SetWindowMinSize(size.width32, size.height32)
+    }
+
+    func setMonitor(_ monitor: Monitor) {
+        SetWindowMonitor(monitor.rawValue)
     }
 
     func setIcon(_ image: Image) {
