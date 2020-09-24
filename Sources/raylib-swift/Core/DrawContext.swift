@@ -25,7 +25,24 @@ public extension DrawContext {
         drawing(context)
     }
 
-    static func inMode2D(withCamera camera: )
+    func inMode2D(withCamera camera: Camera2D, perform: () -> Void) {
+        BeginMode2D(camera.rlCamera)
+        perform()
+        EndMode2D()
+    }
+
+    func inMode3D(withCamera camera: Camera3D, perform: () -> Void) {
+        BeginMode3D(camera.rlCamera)
+        perform()
+        EndMode3D()
+    }
+
+    func inTextureMode(_ target: RenderTexture2D, perform: () -> Void) {
+        BeginTextureMode(target)
+        perform()
+        EndTextureMode()
+        let x = RenderTexture2D(
+    }
 
     func clearBackground(color: Color) {
         ClearBackground(color.rlColor)
