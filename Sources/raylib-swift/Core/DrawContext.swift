@@ -25,7 +25,11 @@ public extension DrawContext {
         drawing(context)
     }
 
-    public func clearBackground(color: Color) {
-        ClearBackground(color)
+    static func inMode2D(withCamera camera: )
+
+    func clearBackground(color: Color) {
+        ClearBackground(color.rlColor)
     }
+
+
 }

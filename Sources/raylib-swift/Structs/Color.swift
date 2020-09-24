@@ -14,7 +14,7 @@ private func toComponent(_ double: Double) -> UInt8 {
 
 
 public struct Color {
-    private var rlColor: CRaylib.Color
+    internal var rlColor: CRaylib.Color
 
     internal init(_ rlColor: CRaylib.Color) {
         self.rlColor = rlColor
