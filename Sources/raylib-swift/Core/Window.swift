@@ -11,9 +11,22 @@ import CRaylib
 public class Window {
     private var _title: String
 
-    public init(size: Size, title: String, icon: Image? = nil) {
+    public var configuration: WindowConfiguration {
+        didSet {
+            SetConfigFlags(configuration.rawValue)
+        }
+    }
+
+    public init(
+        size: Size,
+        title: String,
+        configuration: WindowConfiguration = [],
+        icon: Image? = nil
+    ) {
         self._title = title
-        title.withCString { InitWindow(size.width32, size.height32, $0) }
+        self.configuration = configuration
+
+        title.withCString { InitWindow(size.width, size.height, $0) }
         if let icon = icon { self.setIcon(icon) }
     }
 }
@@ -67,7 +80,7 @@ public extension Window {
     }
 
     func setMinimumSize(_ size: Size) {
-        SetWindowMinSize(size.width32, size.height32)
+        SetWindowMinSize(size.width, size.height)
     }
 
     func setMonitor(_ monitor: Monitor) {

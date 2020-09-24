@@ -22,8 +22,9 @@ enum DrawContext {
         BeginScissorMode(
             Int32(rect.origin.x),
             Int32(rect.origin.y),
-            rect.size.width32,
-            rect.size.height32)
+            rect.size.width,
+            rect.size.height
+        )
         drawing()
         EndScissorMode()
     }

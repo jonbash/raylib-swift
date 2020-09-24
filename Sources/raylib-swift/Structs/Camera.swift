@@ -101,6 +101,6 @@ public extension Camera3D {
     }
 
     func worldToScreen(position: Vector3, size: Size) -> Vector2 {
-        Vector2(GetWorldToScreenEx(position.rlVector, rlCamera, size.width32, size.height32))
+        Vector2(GetWorldToScreenEx(position.rlVector, rlCamera, size.width, size.height))
     }
 }

@@ -34,6 +34,7 @@
 		99843D8F251D23F3009F1FB5 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99843D8E251D23F3009F1FB5 /* Texture.swift */; };
 		99843D95251D29E2009F1FB5 /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99843D94251D29E2009F1FB5 /* Rect.swift */; };
 		99843D9B251D2C03009F1FB5 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99843D9A251D2C03009F1FB5 /* Ray.swift */; };
+		99843DAB251D3C52009F1FB5 /* WindowConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99843DAA251D3C52009F1FB5 /* WindowConfiguration.swift */; };
 		OBJ_26 /* raylib_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* raylib_swift.swift */; };
 		OBJ_33 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_44 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* XCTestManifests.swift */; };
@@ -72,6 +73,7 @@
 		99843D8E251D23F3009F1FB5 /* Texture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
 		99843D94251D29E2009F1FB5 /* Rect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
 		99843D9A251D2C03009F1FB5 /* Ray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
+		99843DAA251D3C52009F1FB5 /* WindowConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowConfiguration.swift; sourceTree = "<group>"; };
 		OBJ_10 /* shim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shim.h; sourceTree = "<group>"; };
 		OBJ_12 /* raylib_swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = raylib_swift.swift; sourceTree = "<group>"; };
 		OBJ_15 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				99843D0F251CECA0009F1FB5 /* Window.swift */,
+				99843DAA251D3C52009F1FB5 /* WindowConfiguration.swift */,
 				99843D2D251CEE58009F1FB5 /* Monitor.swift */,
 				99843D3D251D00CB009F1FB5 /* Cursor.swift */,
 				99843D43251D01BB009F1FB5 /* DrawContext.swift */,
@@ -288,6 +291,7 @@
 				99843D3E251D00CB009F1FB5 /* Cursor.swift in Sources */,
 				99843D2E251CEE58009F1FB5 /* Monitor.swift in Sources */,
 				OBJ_26 /* raylib_swift.swift in Sources */,
+				99843DAB251D3C52009F1FB5 /* WindowConfiguration.swift in Sources */,
 				99843D13251CECA0009F1FB5 /* Window.swift in Sources */,
 				99843D20251CECDD009F1FB5 /* Image.swift in Sources */,
 				99843D44251D01BB009F1FB5 /* DrawContext.swift in Sources */,

@@ -46,8 +46,8 @@ public extension Texture {
     init(id: UInt32, size: Size, format: PixelFormat, mipmaps: Int32 = 1) {
         rlTexture = .init(
             id: id,
-            width: size.width32,
-            height: size.height32,
+            width: size.width,
+            height: size.height,
             mipmaps: mipmaps,
             format: format.rawValue)
     }
@@ -74,7 +74,7 @@ public struct RenderTexture2D {
 
 public extension RenderTexture2D {
     init(size: Size) {
-        self.rlRenderTexture = LoadRenderTexture(size.width32, size.height32)
+        self.rlRenderTexture = LoadRenderTexture(size.width, size.height)
     }
 
     func draw(_ drawing: () -> Void) {
