@@ -32,6 +32,8 @@ public enum PixelFormat: Int32 {
 }
 
 
+// MARK: - Texture
+
 public struct Texture {
     internal var rlTexture: CRaylib.Texture
 
@@ -56,5 +58,28 @@ public extension Texture {
 
     init(image: Image) {
         rlTexture = LoadTextureFromImage(image.rlImage)
+    }
+}
+
+
+// MARK: - Render Texture 2D
+
+public struct RenderTexture2D {
+    internal var rlRenderTexture: CRaylib.RenderTexture2D
+
+    internal init(_ rlRenderTexture: CRaylib.RenderTexture2D) {
+        self.rlRenderTexture = rlRenderTexture
+    }
+}
+
+public extension RenderTexture2D {
+    init(size: Size) {
+        self.rlRenderTexture = LoadRenderTexture(size.width32, size.height32)
+    }
+
+    func draw(_ drawing: () -> Void) {
+        BeginTextureMode(rlRenderTexture)
+        drawing()
+        EndTextureMode()
     }
 }

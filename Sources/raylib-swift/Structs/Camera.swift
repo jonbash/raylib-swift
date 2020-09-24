@@ -29,6 +29,12 @@ public extension Camera2D {
             rotation: rotation,
             zoom: zoom)
     }
+
+    func action(_ perform: () -> Void) {
+        BeginMode2D(rlCamera)
+        perform()
+        EndMode2D()
+    }
 }
 
 
@@ -60,5 +66,11 @@ public extension Camera3D {
             up: up.rlVector,
             fovy: fovy,
             type: type.rawValue)
+    }
+
+    func action(_ perform: () -> Void) {
+        BeginMode3D(rlCamera)
+        perform()
+        EndMode3D()
     }
 }
