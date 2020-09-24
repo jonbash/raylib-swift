@@ -17,4 +17,14 @@ enum DrawContext {
     static func clearBackground(color: Color) {
         ClearBackground(color.rlColor)
     }
+
+    static func scissorDraw(rect: Rect, _ drawing: () -> Void) {
+        BeginScissorMode(
+            Int32(rect.origin.x),
+            Int32(rect.origin.y),
+            rect.size.width32,
+            rect.size.height32)
+        drawing()
+        EndScissorMode()
+    }
 }
