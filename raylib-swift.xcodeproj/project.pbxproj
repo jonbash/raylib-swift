@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		99843D13251CECA0009F1FB5 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99843D0F251CECA0009F1FB5 /* Window.swift */; };
+		99843D15251CECA0009F1FB5 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99843D11251CECA0009F1FB5 /* Size.swift */; };
+		99843D20251CECDD009F1FB5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99843D1F251CECDD009F1FB5 /* Image.swift */; };
 		OBJ_26 /* raylib_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* raylib_swift.swift */; };
 		OBJ_33 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_44 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* XCTestManifests.swift */; };
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99843D0F251CECA0009F1FB5 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		99843D11251CECA0009F1FB5 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		99843D1F251CECDD009F1FB5 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		OBJ_10 /* shim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shim.h; sourceTree = "<group>"; };
 		OBJ_12 /* raylib_swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = raylib_swift.swift; sourceTree = "<group>"; };
 		OBJ_15 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
@@ -76,10 +82,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99843D0E251CECA0009F1FB5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				99843D0F251CECA0009F1FB5 /* Window.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		99843D1E251CECDD009F1FB5 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				99843D1F251CECDD009F1FB5 /* Image.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		OBJ_11 /* raylib-swift */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_12 /* raylib_swift.swift */,
+				99843D0E251CECA0009F1FB5 /* Core */,
+				99843D1E251CECDD009F1FB5 /* Structs */,
+				99843D11251CECA0009F1FB5 /* Size.swift */,
 			);
 			name = "raylib-swift";
 			path = "Sources/raylib-swift";
@@ -112,7 +137,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -121,7 +146,6 @@
 				OBJ_17 /* Products */,
 				OBJ_20 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -209,7 +233,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_17 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -227,7 +251,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				99843D15251CECA0009F1FB5 /* Size.swift in Sources */,
 				OBJ_26 /* raylib_swift.swift in Sources */,
+				99843D13251CECA0009F1FB5 /* Window.swift in Sources */,
+				99843D20251CECDD009F1FB5 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
