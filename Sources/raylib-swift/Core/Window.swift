@@ -91,6 +91,10 @@ public extension Window {
         SetWindowIcon(image.rlImage)
     }
 
+    func saveScreenshot(to filename: String) {
+        filename.withCString(TakeScreenshot(_:))
+    }
+
     func close() {
         CloseWindow()
     }
